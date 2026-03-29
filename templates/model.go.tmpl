@@ -1,0 +1,32 @@
+// SPDX-FileCopyrightText: 2024 Kartoza <info@kartoza.com>
+// SPDX-License-Identifier: MIT
+
+package {{PACKAGE}}
+
+import (
+	"time"
+)
+
+// {{FILENAME}} represents a {{FILENAME}} entity.
+type {{FILENAME}} struct {
+	ID        int64     `json:"id"`
+	Name      string    `json:"name"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// New{{FILENAME}} creates a new {{FILENAME}} instance.
+func New{{FILENAME}}(name string) *{{FILENAME}} {
+	now := time.Now()
+	return &{{FILENAME}}{
+		Name:      name,
+		CreatedAt: now,
+		UpdatedAt: now,
+	}
+}
+
+// Validate checks if the {{FILENAME}} is valid.
+func (m *{{FILENAME}}) Validate() error {
+	// TODO: Add validation logic
+	return nil
+}

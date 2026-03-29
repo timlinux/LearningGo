@@ -1,0 +1,24 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: LearningGo
+Upstream-Contact: Kartoza <info@kartoza.com>
+Source: https://github.com/kartoza/LearningGo
+
+Files: *
+Copyright: 2024 Kartoza <info@kartoza.com>
+License: MIT
+
+Files: go.sum
+Copyright: 2024 Kartoza <info@kartoza.com>
+License: MIT
+
+Files: *.md
+Copyright: 2024 Kartoza <info@kartoza.com>
+License: MIT
+
+Files: .gitignore
+Copyright: 2024 Kartoza <info@kartoza.com>
+License: MIT
+
+Files: templates/*
+Copyright: 2024 Kartoza <info@kartoza.com>
+License: MIT

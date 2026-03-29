@@ -1,0 +1,61 @@
+# LearningGo .gitignore
+
+# Binaries
+bin/
+dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test artifacts
+*.test
+coverage.out
+coverage.html
+
+# Go workspace
+.go/
+
+# Dependency directories
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.o
+*.a
+
+# Debug files
+*.debug
+__debug_bin*
+
+# Local environment
+.env
+.env.local
+*.local
+
+# Logs
+*.log
+PROMPT.log
+
+# Temporary files
+tmp/
+temp/
+
+# Pre-commit
+.pre-commit-cache/
+
+# Secrets
+.secrets
+*.pem
+*.key

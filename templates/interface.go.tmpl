@@ -1,0 +1,64 @@
+// SPDX-FileCopyrightText: 2024 Kartoza <info@kartoza.com>
+// SPDX-License-Identifier: MIT
+
+package {{PACKAGE}}
+
+import "context"
+
+// {{FILENAME}} defines the interface for {{FILENAME}} operations.
+type {{FILENAME}} interface {
+	// Get retrieves an item by ID.
+	Get(ctx context.Context, id int64) (interface{}, error)
+
+	// List retrieves all items.
+	List(ctx context.Context) ([]interface{}, error)
+
+	// Create creates a new item.
+	Create(ctx context.Context, item interface{}) error
+
+	// Update updates an existing item.
+	Update(ctx context.Context, id int64, item interface{}) error
+
+	// Delete removes an item by ID.
+	Delete(ctx context.Context, id int64) error
+}
+
+// {{FILENAME}}Impl is the default implementation of {{FILENAME}}.
+type {{FILENAME}}Impl struct {
+	// TODO: Add dependencies
+}
+
+// New{{FILENAME}} creates a new {{FILENAME}} implementation.
+func New{{FILENAME}}() {{FILENAME}} {
+	return &{{FILENAME}}Impl{}
+}
+
+// Get retrieves an item by ID.
+func (s *{{FILENAME}}Impl) Get(ctx context.Context, id int64) (interface{}, error) {
+	// TODO: Implement
+	return nil, nil
+}
+
+// List retrieves all items.
+func (s *{{FILENAME}}Impl) List(ctx context.Context) ([]interface{}, error) {
+	// TODO: Implement
+	return nil, nil
+}
+
+// Create creates a new item.
+func (s *{{FILENAME}}Impl) Create(ctx context.Context, item interface{}) error {
+	// TODO: Implement
+	return nil
+}
+
+// Update updates an existing item.
+func (s *{{FILENAME}}Impl) Update(ctx context.Context, id int64, item interface{}) error {
+	// TODO: Implement
+	return nil
+}
+
+// Delete removes an item by ID.
+func (s *{{FILENAME}}Impl) Delete(ctx context.Context, id int64) error {
+	// TODO: Implement
+	return nil
+}

@@ -1,0 +1,122 @@
+# LearningGo Pre-commit Configuration
+# Comprehensive checks for linting, formatting, EU REUSE compliance, spelling, and more
+
+repos:
+  # General file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        name: Trim trailing whitespace
+      - id: end-of-file-fixer
+        name: Fix end of files
+      - id: check-yaml
+        name: Check YAML syntax
+      - id: check-json
+        name: Check JSON syntax
+      - id: check-toml
+        name: Check TOML syntax
+      - id: check-added-large-files
+        name: Check for large files
+        args: ['--maxkb=500']
+      - id: check-case-conflict
+        name: Check case conflicts
+      - id: check-merge-conflict
+        name: Check merge conflicts
+      - id: detect-private-key
+        name: Detect private keys
+      - id: check-executables-have-shebangs
+        name: Check shebangs
+      - id: check-shebang-scripts-are-executable
+        name: Verify shebang scripts are executable
+      - id: mixed-line-ending
+        name: Fix mixed line endings
+        args: ['--fix=lf']
+
+  # Go formatting
+  - repo: https://github.com/dnephin/pre-commit-golang
+    rev: v0.5.1
+    hooks:
+      - id: go-fmt
+        name: Go format
+      - id: go-imports
+        name: Go imports
+      - id: go-vet
+        name: Go vet
+      - id: go-mod-tidy
+        name: Go mod tidy
+
+  # Go linting with golangci-lint
+  - repo: https://github.com/golangci/golangci-lint
+    rev: v1.57.2
+    hooks:
+      - id: golangci-lint
+        name: Go lint (golangci-lint)
+        args: ['--fix']
+
+  # EU REUSE license compliance
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: v3.0.1
+    hooks:
+      - id: reuse
+        name: REUSE license compliance
+
+  # Spell checking
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+      - id: codespell
+        name: Spell check
+        args: ['--skip=go.sum,go.mod,.git,vendor']
+        types_or: [go, markdown, text, yaml]
+
+  # Markdown linting
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.39.0
+    hooks:
+      - id: markdownlint
+        name: Markdown lint
+        args: ['--fix', '--disable', 'MD013', 'MD033', 'MD041']
+
+  # YAML linting
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        name: YAML lint
+        args: ['-c', '.yamllint.yml']
+
+  # Shell script linting
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
+        name: Shell script lint
+
+  # Security scanning
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        name: Detect secrets
+        args: ['--baseline', '.secrets.baseline']
+        exclude: 'go\.sum'
+
+  # Commit message linting
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.18.0
+    hooks:
+      - id: commitizen
+        name: Conventional commit check
+        stages: [commit-msg]
+
+# CI configuration
+ci:
+  autofix_commit_msg: |
+    [pre-commit.ci] auto fixes from pre-commit hooks
+  autofix_prs: true
+  autoupdate_branch: 'main'
+  autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
+  autoupdate_schedule: weekly
+  skip: []
+  submodules: false

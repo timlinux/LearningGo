@@ -1,0 +1,29 @@
+// SPDX-FileCopyrightText: 2024 Kartoza <info@kartoza.com>
+// SPDX-License-Identifier: MIT
+
+package {{PACKAGE}}
+
+import "testing"
+
+func TestExample(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    string
+		expected string
+	}{
+		{
+			name:     "basic test",
+			input:    "test",
+			expected: "expected",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			// TODO: Implement test logic
+			if tt.input == "" {
+				t.Errorf("input should not be empty")
+			}
+		})
+	}
+}

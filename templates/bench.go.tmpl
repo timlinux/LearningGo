@@ -1,0 +1,23 @@
+// SPDX-FileCopyrightText: 2024 Kartoza <info@kartoza.com>
+// SPDX-License-Identifier: MIT
+
+package {{PACKAGE}}
+
+import "testing"
+
+func BenchmarkExample(b *testing.B) {
+	// Setup code here (not measured)
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		// TODO: Code to benchmark
+	}
+}
+
+func BenchmarkExampleParallel(b *testing.B) {
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			// TODO: Code to benchmark in parallel
+		}
+	})
+}

@@ -1,0 +1,42 @@
+// SPDX-FileCopyrightText: 2024 Kartoza <info@kartoza.com>
+// SPDX-License-Identifier: MIT
+
+package {{PACKAGE}}
+
+import (
+	"encoding/json"
+	"net/http"
+)
+
+// {{FILENAME}}Handler handles requests for {{FILENAME}}.
+type {{FILENAME}}Handler struct {
+	// TODO: Add dependencies
+}
+
+// New{{FILENAME}}Handler creates a new handler.
+func New{{FILENAME}}Handler() *{{FILENAME}}Handler {
+	return &{{FILENAME}}Handler{}
+}
+
+// ServeHTTP implements http.Handler.
+func (h *{{FILENAME}}Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	case http.MethodGet:
+		h.handleGet(w, r)
+	case http.MethodPost:
+		h.handlePost(w, r)
+	default:
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+	}
+}
+
+func (h *{{FILENAME}}Handler) handleGet(w http.ResponseWriter, r *http.Request) {
+	response := map[string]string{"message": "Hello from {{FILENAME}}"}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(response)
+}
+
+func (h *{{FILENAME}}Handler) handlePost(w http.ResponseWriter, r *http.Request) {
+	// TODO: Implement POST handler
+	w.WriteHeader(http.StatusCreated)
+}
