@@ -1,3 +1,3 @@
-module github.com/kartoza/LearningGo
+module github.com/timlinux/LearningGo
 
 go 1.22

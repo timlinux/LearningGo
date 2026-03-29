@@ -82,7 +82,7 @@ linters-settings:
     simplify: true
 
   goimports:
-    local-prefixes: github.com/kartoza/LearningGo
+    local-prefixes: github.com/timlinux/LearningGo
 
   lll:
     line-length: 120

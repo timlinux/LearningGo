@@ -61,7 +61,7 @@ You'll need to install the following manually:
 
 ```bash
 # Clone the repository
-git clone https://github.com/kartoza/LearningGo.git
+git clone https://github.com/timlinux/LearningGo.git
 cd LearningGo
 
 # Install pre-commit hooks
@@ -268,9 +268,9 @@ This project is [REUSE](https://reuse.software/) compliant.
 
 ## Support
 
-- [GitHub Issues](https://github.com/kartoza/LearningGo/issues) - Report bugs or request features
+- [GitHub Issues](https://github.com/timlinux/LearningGo/issues) - Report bugs or request features
 - [GitHub Sponsors](https://github.com/sponsors/kartoza) - Support development
 
 ---
 
-Made with 💗 by [Kartoza](https://kartoza.com) | [Donate!](https://github.com/sponsors/kartoza) | [GitHub](https://github.com/kartoza/LearningGo)
+Made with 💗 by [Kartoza](https://kartoza.com) | [Donate!](https://github.com/sponsors/kartoza) | [GitHub](https://github.com/timlinux/LearningGo)
